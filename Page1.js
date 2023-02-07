@@ -16,8 +16,8 @@ UIManager.setLayoutAnimationEnabledExperimental &&
 
 export default class Page1 extends React.Component {
   state = {
-    w: 100,
-    h: 100,
+    w: 200,
+    h: 200,
   };
 
   _onPress = () => {
