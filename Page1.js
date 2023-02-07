@@ -61,9 +61,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   box: {
-    width: 200,
-    height: 200,
-    backgroundColor: 'red',
+    width: 300,
+    height: 300,
+    backgroundColor: 'violet',
   },
   button: {
     backgroundColor: 'black',
