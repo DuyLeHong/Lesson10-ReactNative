@@ -4,6 +4,8 @@ import { StatusBar } from 'expo-status-bar';
 import { Button, StyleSheet, Text, View } from 'react-native';
 import Page1 from './Page1';
 import Flex from './Page2';
+import FlatListBasics from './Page3';
+import Page4 from './Page4';
 
 export default function App() {
 
@@ -18,6 +20,8 @@ export default function App() {
           options={{ title: 'Trang chu' }}
         />
         <Stack.Screen name="Flex" component={Flex} />
+        <Stack.Screen name="Page3" component={FlatListBasics} />
+        <Stack.Screen name="Page4" component={Page4} />
       </Stack.Navigator>
     </NavigationContainer>
   );

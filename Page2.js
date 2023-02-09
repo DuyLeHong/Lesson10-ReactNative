@@ -28,6 +28,14 @@ const Flex = ({ navigation, route }) => {
                         <Text style={styles.buttonText}>Quay lai</Text>
                     </View>
                 </TouchableOpacity>
+
+                <TouchableOpacity onPress={() => {
+                    navigation.navigate('Page4', {data: 'CP17306'});
+                }}>
+                    <View style={styles.button}>
+                        <Text style={styles.buttonText}>Go to Page3</Text>
+                    </View>
+                </TouchableOpacity>
             </View>
         </View>
     );
