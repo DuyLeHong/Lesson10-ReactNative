@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 const Flex = ({ navigation, route }) => {
     return (
@@ -17,6 +17,17 @@ const Flex = ({ navigation, route }) => {
 
                 <Text>Du lieu tu Page1: {route.params.itemId} - {route.params.name}
                 </Text>
+
+                <TouchableOpacity onPress={() => {
+                    //navigation.pop(1);
+
+                    route.params.onGoBack({ name: 'CP17306', passMon: true });
+                    navigation.goBack();
+                }}>
+                    <View style={styles.button}>
+                        <Text style={styles.buttonText}>Quay lai</Text>
+                    </View>
+                </TouchableOpacity>
             </View>
         </View>
     );
@@ -26,6 +37,17 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 20,
+    },
+
+    button: {
+        backgroundColor: 'black',
+        paddingHorizontal: 20,
+        paddingVertical: 15,
+        marginTop: 15,
+    },
+    buttonText: {
+        color: '#fff',
+        fontWeight: 'bold',
     },
 });
 
