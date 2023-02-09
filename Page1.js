@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import Flex from './Page2';
 
-const {UIManager} = NativeModules;
+const { UIManager } = NativeModules;
 
 UIManager.setLayoutAnimationEnabledExperimental &&
   UIManager.setLayoutAnimationEnabledExperimental(true);
@@ -23,14 +23,22 @@ export default class Page1 extends React.Component {
   _onPress = () => {
     // Animate the update
     LayoutAnimation.easeInEaseOut();
-    this.setState({w: this.state.w + 15, h: this.state.h + 15});
+    this.setState({ w: this.state.w + 15, h: this.state.h + 15 });
   };
+
+  // onSelect = data => {
+  //   this.setState(data);
+  // };
+
+  refresh = (data) => {
+    console.log(data)
+  }
 
   render() {
     return (
       <View style={styles.container}>
         <View
-          style={[styles.box, {width: this.state.w, height: this.state.h}]}
+          style={[styles.box, { width: this.state.w, height: this.state.h }]}
         />
         <TouchableOpacity onPress={this._onPress}>
           <View style={styles.button}>
@@ -39,17 +47,21 @@ export default class Page1 extends React.Component {
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => {
-            this.props.navigation.navigate('Flex', {
-              itemId: 2023,
-              name: 'CP18307',
-            });
-          }}>
+          this.props.navigation.navigate('Flex', {
+            itemId: 2023,
+            name: 'CP18307',
+            onGoBack: (data) => {
+              console.log(data.name + " qua mon: " + data.passMon)
+            }
+          },
+          );
+        }}>
           <View style={styles.button}>
             <Text style={styles.buttonText}>Chuyen Page2</Text>
           </View>
         </TouchableOpacity>
 
-      </View>
+      </View >
     );
   }
 }
